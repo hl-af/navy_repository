@@ -1,0 +1,12 @@
+package myinterface;
+
+import myabstract.Dog;
+
+public class AnimalTest {
+	public static void main(String args[]){
+		Dog dog= new Dog();
+		dog.show();
+		System.out.println(dog.aaa);
+		
+	}
+}

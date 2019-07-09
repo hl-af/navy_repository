@@ -1,0 +1,47 @@
+package dynamic_programming;
+
+public class KnapSackValue {
+	public int knapSackvalue(int[] weight,int[] values,int n,int w){
+		//n件物品，背包限制w，物品重量数组weight
+		int maxValue = -1;
+		int[][] states = new int[n][w+1];//因为状态0也要考虑在内，所以是w+1
+		for(int i = 0;i<n;i++)
+			for(int j = 0;j<=w;j++)
+				states[i][j] = -1;
+		
+		states[0][0] = 0; //没有装
+		states[0][weight[0]] =values[0]; //装了
+		for(int i = 1;i<n;i++){
+			for(int j = w;j>=0;j--){  
+				if(states[i-1][j]>0){
+					states[i][j] = states[i-1][j]; //第i件物品不装
+				}
+			}
+			for(int j = w-weight[i];j>=0;j--){  
+				if(states[i-1][j]>0){
+					if(states[i][j+weight[i]]<values[i])
+						states[i][j+weight[i]] = values[i];//第i件物品装
+				}
+			}
+		}
+		for(int j=w;j>=0;j--){
+			if(states[n-1][j]>maxValue){
+				maxValue = states[n-1][j];
+			}
+				
+		}
+		return maxValue;
+		
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] values = {3,4,8,9,6};
+		int[] weight = {2,2,4,6,3};
+		System.out.print(new KnapSackValue().knapSackvalue(weight,values, 5, 9));
+
+	}
+
+}

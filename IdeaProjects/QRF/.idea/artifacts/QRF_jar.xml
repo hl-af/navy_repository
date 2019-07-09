@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="QRF:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/QRF_jar</output-path>
+    <root id="archive" name="QRF.jar">
+      <element id="module-output" name="QRF" />
+    </root>
+  </artifact>
+</component>

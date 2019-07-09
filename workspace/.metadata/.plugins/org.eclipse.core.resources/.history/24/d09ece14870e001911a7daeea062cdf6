@@ -1,0 +1,14 @@
+package NiuKe;
+public class FindArray {
+	public boolean Find(int target, int [][] array){
+        int rowCount = array.size();
+        int colCount = array[0].size();
+        for(int i =0;i<rowCount;i++){
+            for(int j=0;j<colCount;j++){
+                if(array[i][j]==target)
+                    return true;
+            }
+        }
+        return false;
+    }
+}

@@ -1,0 +1,29 @@
+package Jan8;
+
+public class MinNumberInRotateArray {
+	public int minNumberInRotateArray(int [] array) {
+	    int low = 0;
+		int high = array.length-1;
+		int mid = (low + high)/2;
+		while(array[low] < array[mid]){
+			if(array[mid] > array[high]){
+				low = mid + 1;
+			}
+			else{
+				high = mid - 1;
+			}
+			mid = (low + high)/2;
+		}
+		return array[mid];
+    }
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MinNumberInRotateArray MIRA = new MinNumberInRotateArray();
+		int[] array = {4,5,6,7,8,9,10,10,10,1,2,3};
+		System.out.print(MIRA.minNumberInRotateArray(array));
+	}
+
+}

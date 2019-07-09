@@ -1,0 +1,13 @@
+package dynamic_programming;
+
+public class KnapSackValue {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
